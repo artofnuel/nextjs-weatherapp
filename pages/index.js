@@ -10,7 +10,7 @@ export default function Home() {
   const [city, setCity] = useState('')
   const [weather, setWeather] = useState({})
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
   
   const fetchWeather = (e) => {
     e.preventDefault()
@@ -19,7 +19,6 @@ export default function Home() {
       // console.log(response.data)
     })
     setCity('')
-    setLoading(false)
   }
 
     return (
@@ -31,11 +30,11 @@ export default function Home() {
         </Head>
   
         {/* Overlay */}
-        <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[1]' />
+        <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/20 z-[1]' />
   
         {/* BKG IMage */}
         <Image
-          src={'https://images.unsplash.com/photo-1665114839470-f57f75b78f82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=727&q=80'}
+          src={'https://images.unsplash.com/photo-1664982060484-956ae9c69aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'}
           alt='/'
           layout='fill'
           className='object-cover object-center'
